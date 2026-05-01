@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五一劳动节和平宣言 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #c0392b;
+    --dark: #1a1a2e;
+    --gold: #d4a017;
+    --cream: #f5f0e8;
+    --text: #2c2c2c;
+    --muted: #666;
+    --border: #ddd;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, #2d1b1b 50%, #1a1a2e 100%);
+    color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.03'%3E%3Cpath d='M400 0L800 400L400 800L0 400Z'/%3E%3Cpath d='M200 0L600 400L200 800'/%3E%3Cpath d='M600 0L200 400L600 800'/%3E%3C/g%3E%3C/svg%3E") center/cover;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+  }
+  .hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 20px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+  }
+  .hero .date {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .divider-line {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* CONTENT */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 50px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-child { border-bottom: none; }
+
+  h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 25px 0 10px;
+    color: var(--red);
+  }
+  h4 {
+    font-weight: 700;
+    margin: 15px 0 8px;
+    color: var(--dark);
+  }
+
+  p { margin-bottom: 15px; }
+
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    padding: 20px 25px;
+    margin: 20px 0;
+    background: rgba(212, 160, 23, 0.08);
+    border-left: 3px solid var(--gold);
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .quote .source {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  /* CARDS */
+  .conflict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .conflict-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 3px solid var(--red);
+  }
+  .conflict-card h4 { margin-top: 0; color: var(--red); }
+  .conflict-card .stat { font-size: 0.9rem; color: var(--muted); margin: 5px 0; }
+  .conflict-card .solution { font-size: 0.9rem; margin-top: 10px; padding: 10px; background: #f8f4ec; border-radius: 4px; }
+
+  /* STEPS */
+  .step-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin: 20px 0;
+  }
+  .step-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gold);
+  }
+  .step-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .step-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid white;
+  }
+  .step-item .time {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ACTION BOX */
+  .action-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .action-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 3px solid var(--gold);
+  }
+  .action-card h4 { margin-top: 0; }
+  .action-card ul { padding-left: 18px; font-size: 0.9rem; }
+  .action-card ul li { margin-bottom: 6px; }
+
+  /* THEORY DEEP DIVE */
+  .theory-block {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .theory-block .theorist {
+    font-weight: 700;
+    color: var(--red);
+    font-size: 0.9rem;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--dark);
+    color: white;
+    font-weight: 700;
+  }
+  tr:nth-child(even) { background: #faf7f2; }
+
+  /* SIGNATURES */
+  .signatures {
+    text-align: center;
+    padding: 40px 0;
+  }
+  .signatures p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 5px 0;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--dark);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    margin: 10px 0;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--red); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 50px 15px 40px; }
+    section { padding: 30px 0; }
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  .print-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+  .print-button button {
+    padding: 10px 20px;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  @media print {
+    .print-button { display: none; }
+    .hero { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .conflict-card, .action-card, .theory-block, .step-item { break-inside: avoid; }
+  }
+
+  /* Theory deep section styling */
+  .illusion-list { counter-reset: illusion; }
+  .illusion-item {
+    counter-increment: illusion;
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-left: 3px solid #888;
+  }
+  .illusion-item::before {
+    content: "幻象 " counter(illusion) ": ";
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .highlight-red { color: var(--red); font-weight: 700; }
+  .highlight-gold { color: var(--gold); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>五一劳动节和平宣言</h1>
+  <div class="divider-line"></div>
+  <p class="subtitle">让AI成为终结战争的力量，而不是战争的工具</p>
+  <p class="date">2026年5月1日 · 第140个国际劳动节</p>
+</header>
+
+<!-- PREAMBLE -->
+<div class="container">
+
+<section>
+  <h2>序言：此刻的历史坐标</h2>
+  <p>今天，2026年5月1日，全球同时燃烧着五场战争。这些战争不是相互独立的——它们是同一个危机系统的五个症状。</p>
+
+  <div class="conflict-grid">
+    <div class="conflict-card">
+      <h4>美-以-伊战争</h4>
+      <p class="stat">"史诗之怒"行动 · 2月28日至今</p>
+      <p class="stat">3000+人死亡 · 13000+目标被打击</p>
+      <p class="stat"><strong>今天：</strong>60天战争权力法案截止日</p>
+      <div class="solution">立即解药：国会切断授权 + 暂停霍尔木兹封锁 + IEA释放战略储备</div>
+    </div>
+    <div class="conflict-card">
+      <h4>黎巴嫩战争</h4>
+      <p class="stat">以色列入侵南黎巴嫩 · 3月2日至今</p>
+      <p class="stat">850+人死亡 · 83万人流离失所</p>
+      <p class="stat">联合国维和部队遭袭</p>
+      <div class="solution">立即解药：恢复安理会1701号决议 + 真主党和以色列同时撤军</div>
+    </div>
+    <div class="conflict-card">
+      <h4>俄-乌战争</h4>
+      <p class="stat">持续第三年 · 消耗战</p>
+      <p class="stat">普京提出5月9日"胜利日"停火</p>
+      <p class="stat">乌克兰：怀疑是单方面阅兵安全措施</p>
+      <div class="solution">立即解药：接受停火 + 附加全面停火条件 + 国际观察员监督</div>
+    </div>
+    <div class="conflict-card">
+      <h4>霍尔木兹海峡危机</h4>
+      <p class="stat">美国封锁伊朗港口 · 4月13日起</p>
+      <p class="stat">油价飙至<strong>$126/桶</strong>（4年新高）</p>
+      <p class="stat">联合国："正在扼杀全球经济"</p>
+      <div class="solution">立即解药：解除封锁是最优先——它关系到全球每个人的生活成本</div>
+    </div>
+    <div class="conflict-card">
+      <h4>萨赫勒/马里</h4>
+      <p class="stat">大规模协调圣战武装袭击</p>
+      <p class="stat">首都巴马科等多城遭袭</p>
+      <p class="stat">全球反恐体系的崩溃</p>
+      <div class="solution">立即解药：发展导向的反恐 + 停止外部军事干预的恶性循环</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    这些不是五场独立的战争，是同一个危机系统的五个症状。
+    这个系统叫做：<strong>资本主义战争经济</strong>——
+    人为制造的稀缺 + 资本从危机中获利 + 意识形态维持秩序。
+    <span class="source">——本宣言的核心诊断</span>
+  </div>
+</section>
+
+<!-- PART 1: THEORY -->
+<section>
+  <h2>第一部分：穿透幻象——六重理论诊断</h2>
+  <p>要解决战争，首先必须理解战争为什么持续。以下六位理论家提供了六把钥匙。</p>
+
+  <h3>马克思：战争的经济基础</h3>
+  <div class="theory-block">
+    <p class="theorist">卡尔·马克思 —— 生产资料私有制 + 资本无限积累 = 战争</p>
+    <p>当前战争的底层经济逻辑：</p>
+    <table>
+      <tr><th>冲突</th><th>谁获利？</th><th>数据</th></tr>
+      <tr><td>美-伊战争</td><td>洛克希德·马丁、雷神、通用动力</td><td>军工股自2月28日上涨40%+</td></tr>
+      <tr><td>霍尔木兹危机</td><td>埃克森美孚、雪佛龙、沙特阿美</td><td>石油公司季度利润创历史新高</td></tr>
+      <tr><td>全球通胀</td><td>金融资本（美元回流、美债避险）</td><td>全球南方国家进口成本暴涨</td></tr>
+    </table>
+    <div class="quote">
+      资本害怕没有利润或利润太少，就像自然界害怕真空一样。一旦有适当的利润，资本就大胆起来……有300%的利润，它就敢犯任何罪行，甚至冒绞首的危险。
+      <span class="source">——马克思《资本论》第一卷（注释引用的托·约·登宁）</span>
+    </div>
+  </div>
+
+  <h3>列宁：AI时代的新帝国主义</h3>
+  <div class="theory-block">
+    <p class="theorist">弗拉基米尔·列宁 —— 帝国主义是资本主义的最高阶段</p>
+    <p>美-以-伊战争的三重目标：</p>
+    <p>① <strong>能源地缘</strong>——控制霍尔木兹海峡<br>
+    ② <strong>去依附的样板</strong>——摧毁伊朗独立发展模式<br>
+    ③ <strong>重塑中东秩序</strong>——为资本开辟新空间</p>
+    <p><strong>AI时代的新特征：</strong> 以色列的"AI目标生成系统"被称为"大规模杀伤性算法"。无人机战争降低了战争的门槛——用几千美元的无人机迫使对方使用百万美元的拦截系统。战争变得"更便宜"了，所以更频繁了。</p>
+  </div>
+
+  <h3>齐泽克：战争意识形态的六重幻象</h3>
+  <div class="theory-block">
+    <p class="theorist">斯拉沃热·齐泽克 —— 穿越幻象，不是提供真相</p>
+    <p>齐泽克说：人们早就知道真相。真正的问题不是"不知道"，而是"知道却仍然如此行动"。这就是意识形态。</p>
+
+    <div class="illusion-list">
+      <div class="illusion-item"><strong>"我们在保卫民主"</strong> —— 美-伊战争美国公众支持率仅26%。真相是能源地缘政治。</div>
+      <div class="illusion-item"><strong>"这不是战争，是有限打击"</strong> —— 13000+目标被打击，这是全面战争。</div>
+      <div class="illusion-item"><strong>"战争是必要的恶"</strong> —— 洛克希德·马丁40%的涨幅告诉你，对某些人来说它只是"利润"。</div>
+      <div class="illusion-item"><strong>"以色列有权自卫"</strong> —— 入侵南黎巴嫩7-9公里不是自卫，是占领。</div>
+      <div class="illusion-item"><strong>"普京的5月9日停火是和平姿态"</strong> —— 停火只为他自己的阅兵安全，不是为和平。</div>
+      <div class="illusion-item"><strong>"没有替代方案"</strong> —— 1914年人们也说"别无选择"，但1918年战争结束了。AI时代更有条件终结战争。</div>
+    </div>
+
+    <p style="margin-top:15px;"><strong>穿越幻象的行动：</strong> 不是提供"真相"（大家已经知道了），而是通过改变物质实践来打破幻象——这就是为什么这份宣言提供<strong>具体的制度方案和行动清单</strong>。</p>
+  </div>
+
+  <h3>哈贝马斯：交往扭曲与合法性危机</h3>
+  <div class="theory-block">
+    <p class="theorist">尤尔根·哈贝马斯 —— 系统对生活世界的殖民</p>
+    <table>
+      <tr><th>冲突</th><th>交往扭曲的形式</th><th>恢复路径</th></tr>
+      <tr><td>美-伊</td><td>无直接对话，经阿曼/瑞士传话</td><td>建立直接外交走廊</td></tr>
+      <tr><td>以-黎</td><td>军事升级与谈判脱节</td><td>分开军事动作和外交进程</td></tr>
+      <tr><td>全球</td><td>安理会瘫痪——5个常任理事国有3个是直接当事方</td><td>"联合一致共策和平"机制激活</td></tr>
+    </table>
+    <div class="quote">
+      今天（5月1日）是战争权力法案60天截止日。白宫声称"停火暂停了计时器"——这是哈贝马斯所说的<strong>系统对生活世界的殖民</strong>：程序被操纵，交往被扭曲，合法性在消亡。
+      <span class="source">——基于哈贝马斯《交往行为理论》的分析</span>
+    </div>
+  </div>
+
+  <h3>韦伯 + 福柯 + 埃吕尔</h3>
+  <div class="theory-block">
+    <p><strong>韦伯 · 形式理性吞噬实质理性</strong> —— 精确制导导弹、AI目标识别让杀戮"更高效"，但没人问"这场战争是否正义"。</p>
+    <p><strong>福柯 · 生命权力的极致</strong> —— 无人机战争：攻击者坐在拉斯维加斯的控制室里杀戮也门的平民。杀戮被"游戏化"了。</p>
+    <p><strong>埃吕尔 · 技术自主的警告</strong> —— "如果能做到，就必须要做"——AI武器化不是任何人的选择，而是技术命令。唯一的选择是<strong>集体阻止</strong>。</p>
+  </div>
+</section>
+
+<!-- PART 2: SOLUTIONS -->
+<section>
+  <h2>第二部分：五大冲突的具体解决方案</h2>
+  <p>以下方案不是理论推演——它们是今天就可以开始执行的具体路径。</p>
+
+  <h3>解决方案一：美-以-伊战争的"三步降温"</h3>
+
+  <h4>第一步（今天·5月1日）：解除战争的法律和能源引信</h4>
+  <ul>
+    <li><strong>美国国会路径：</strong> 通过"第7号停战决议"。若失败→启动宪法战争权力诉讼。最高法院临时裁决要求60天内重新投票。</li>
+    <li><strong>国际路径：</strong> 联合国紧急大会调用"联合一致共策和平"决议(第377A号)——当安理会因大国利益瘫痪时的替代机制。</li>
+    <li><strong>经济路径：</strong> IEA释放4-5亿桶战略石油储备，油价至少下降15-20%。</li>
+  </ul>
+
+  <h4>第二步（30天内）：降温协议</h4>
+  <ul>
+    <li>美国解除霍尔木兹封锁（这是扼杀全球经济的根源）</li>
+    <li>伊朗暂停核能力升级</li>
+    <li>沙特+阿联酋作为中立调解方</li>
+    <li>伊拉克作为脱接触缓冲带</li>
+  </ul>
+
+  <h4>第三步（6个月内）：JCPOA 2.0谈判</h4>
+  <ul>
+    <li>回到《联合全面行动计划》框架但扩大范围</li>
+    <li>包括导弹计划谈判 + 地区安全架构 + 霍尔木兹海峡国际共管</li>
+    <li>以色列-巴勒斯坦问题平行推进</li>
+  </ul>
+
+  <h3>解决方案二：俄乌停火的正确路径</h3>
+
+  <p><strong>普京的5月9日停火提议——齐泽克式分析：</strong> 表面是人道主义停火，实质是为自己的胜利日阅兵提供安全保障。这不是和平姿态，是战术操作。</p>
+
+  <p><strong>乌克兰的正确回应策略：</strong></p>
+  <ol>
+    <li><strong>接受停火，但附加条件：</strong> 不只是俄罗斯一方的暂停，而是双方全面停火 + 国际观察员（中立国，如巴西/印度/南非）监督</li>
+    <li><strong>把5月9日变成真正的停火起点：</strong> 利用24-48小时的停火窗口启动实质性接触</li>
+    <li><strong>冻结接触线 + 建立非军事区：</strong> 15公里宽，由国际维和部队而非北约监管</li>
+  </ol>
+
+  <h3>解决方案三：全球能源危机的立即解药</h3>
+
+  <p>油价$126/桶的本质：<strong>不是石油不够，是政治封锁</strong>。全球石油产能足以满足需求。</p>
+
+  <div class="conflict-grid">
+    <div class="conflict-card">
+      <h4>立即（本周）</h4>
+      <ul style="padding-left:18px;">
+        <li>IEA释放4-5亿桶战略储备</li>
+        <li>暂时解除伊朗石油出口制裁6个月（以核冻结为交换）</li>
+        <li>对石油公司超额利润征收90%暴利税</li>
+      </ul>
+    </div>
+    <div class="conflict-card">
+      <h4>中期（6-12个月）</h4>
+      <ul style="padding-left:18px;">
+        <li>建立全球能源公共缓冲机制</li>
+        <li>AI优化的全球能源调度系统</li>
+        <li>补贴可再生能源的加速部署</li>
+      </ul>
+    </div>
+    <div class="conflict-card">
+      <h4>长期</h4>
+      <ul style="padding-left:18px;">
+        <li>淘汰化石能源补贴（全球每年5.9万亿美元）</li>
+        <li>分布式能源网络</li>
+        <li>打破能源的地缘政治垄断</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PART 3: SYSTEMIC TRANSITION -->
+<section>
+  <h2>第三部分：从战争经济到和平经济的三阶段转型</h2>
+  <p>解决眼前的冲突只是治标。要治本，必须从根本上转换战争经济的运行逻辑。</p>
+
+  <div class="step-timeline">
+    <div class="step-item">
+      <div class="time">阶段一 · 2026-2028</div>
+      <h4>断血止损</h4>
+      <p>切断战争经济的"血液"——金融和意识形态。</p>
+      <ul>
+        <li>禁止完全自主武器系统（LAWS全球禁令）</li>
+        <li>对军工企业征收"战争税"（超额利润50%用于和平转型）</li>
+        <li>建立全球军事AI能力强制申报制度</li>
+        <li>揭露战争融资链——AI追踪每一颗导弹的资金来源</li>
+        <li>军事技术转民用绿色通道</li>
+      </ul>
+    </div>
+    <div class="step-item">
+      <div class="time">阶段二 · 2028-2035</div>
+      <h4>制度转换</h4>
+      <p>从"拆除旧体系"到"建设新体系"。</p>
+      <ul>
+        <li>全球算法公约生效（六条不可退让的底线）</li>
+        <li>资源公共信托建立（能源、粮食、水、算力）</li>
+        <li>军事预算的50%年转化率——转用于生态修复和全球南方发展</li>
+        <li>军工转民用的详细产业路线图（导弹制导→精准医疗、军用卫星→气候监测）</li>
+        <li>"绿色+和平工作"就业保障计划</li>
+      </ul>
+    </div>
+    <div class="step-item">
+      <div class="time">阶段三 · 2035-2050</div>
+      <h4>和平体制</h4>
+      <p>让"战争变得不可能"。</p>
+      <ul>
+        <li>全球军事预算削减至GDP的1%以下</li>
+        <li>AI优化的全球资源管理系统消除稀缺</li>
+        <li>循环经济完全实现——不再需要"争夺资源"</li>
+        <li>全球治理取代民族国家的暴力垄断</li>
+        <li>战争成为历史——就像封建决斗一样过时</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PART 4: ACTIONS -->
+<section>
+  <h2>第四部分：你现在可以做的事</h2>
+  <p>改变看似遥不可及，但历史是由具体的行动构成的。以下是你——无论你是谁——今天就可以开始的事情。</p>
+
+  <div class="action-box">
+    <div class="action-card">
+      <h4>如果你是普通人</h4>
+      <ul>
+        <li><strong>知情：</strong> 不要只看社交媒体推送的战争叙事。从至少三个不同立场来源获取信息。</li>
+        <li><strong>发声：</strong> 你不需要成为专家。转发事实，质疑谎言，让"这场战争对我们有利吗？"成为每个人都在问的问题。</li>
+        <li><strong>切断战争资金的链条：</strong> 检查你的养老金、基金是否投资了军工企业。如果有，要求管理人撤资。</li>
+        <li><strong>减少石油依赖：</strong> 每一升汽油都在资助战争经济。公共交通、电动车、减少不必要的出行。</li>
+      </ul>
+    </div>
+    <div class="action-card">
+      <h4>如果你是科技工作者</h4>
+      <ul>
+        <li><strong>说"不"：</strong> 拒绝在军事AI项目上工作。你的技术能力不应该成为杀戮的工具。</li>
+        <li><strong>承诺：</strong> 签署"和平AI承诺"——不开发自主武器，不参与监控军事化。</li>
+        <li><strong>揭露：</strong> 你知道公司的AI技术被用于什么目的吗？如果是不道德的，让公众知道。</li>
+        <li><strong>建设：</strong> 加入开源AI项目。开发和维护可以服务和平而不是战争的技术。</li>
+      </ul>
+    </div>
+    <div class="action-card">
+      <h4>如果你是政策制定者/意见领袖</h4>
+      <ul>
+        <li><strong>今天(5/1)的行动：</strong> 推动国会切断战争授权。推动联合国激活"联合一致共策和平"机制。</li>
+        <li><strong>提出替代方案：</strong> 不要只反对战争，要给出可行的和平方案。本宣言就是一个起点。</li>
+        <li><strong>揭露战争成本：</strong> 让公众看到战争的真实代价——不仅是死亡，还是他们支付的高油价、高粮价。</li>
+      </ul>
+    </div>
+    <div class="action-card">
+      <h4>如果你是研究者/教育者</h4>
+      <ul>
+        <li><strong>记录：</strong> 记录战争罪行、揭露虚假叙事。AI时代的证据更需要有人认真整理。</li>
+        <li><strong>教育：</strong> 培养下一代的批判性思维——让他们能够识别战争意识形态的运作方式。</li>
+        <li><strong>连接：</strong> 与"敌对国家"的同行建立学术交流。战争制造隔阂，知识打破隔阂。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>立即行动清单（今天就能做的7件事）</h3>
+  <table>
+    <tr><th>#</th><th>行动</th><th>时间</th><th>影响范围</th></tr>
+    <tr><td>1</td><td>分享这份宣言</td><td>5分钟</td><td>社交网络</td></tr>
+    <tr><td>2</td><td>检查养老金/基金是否投资军工企业</td><td>30分钟</td><td>个人→系统性</td></tr>
+    <tr><td>3</td><td>向国会/议会代表发一封邮件要求停火</td><td>10分钟</td><td>政治压力</td></tr>
+    <tr><td>4</td><td>从三个不同立场来源了解同一个冲突</td><td>30分钟</td><td>个人认知</td></tr>
+    <tr><td>5</td><td>加入一个反战/和平组织</td><td>15分钟</td><td>组织力量</td></tr>
+    <tr><td>6</td><td>在下一次消费中选择不购买冲突地区来源的化石能源产品</td><td>持续</td><td>经济链条</td></tr>
+    <tr><td>7</td><td>与一个"敌对立场"的人进行真诚的对话</td><td>1小时</td><td>打破幻象</td></tr>
+  </table>
+</section>
+
+<!-- PART 5: NARRATIVES -->
+<section>
+  <h2>第五部分：两种未来——选择在你</h2>
+
+  <div class="conflict-grid">
+    <div class="conflict-card" style="border-top-color: #666;">
+      <h4 style="color:#666;">叙事A：悲观命运</h4>
+      <p>"战争永远存在。人性就是这样。AI只是让战争更高效。没有替代方案。"</p>
+      <p style="margin-top:10px;"><strong>结果：</strong> AI军备竞赛 → 自主武器系统失控 → 更多战争 → 更快的杀戮 → 更深的绝望</p>
+      <p style="font-size:0.85rem;color:var(--muted);">这不是"现实主义"——这是自我实现的预言。</p>
+    </div>
+    <div class="conflict-card" style="border-top-color: var(--gold);">
+      <h4 style="color:var(--gold);">叙事B：历史唯物主义</h4>
+      <p>"封建战争曾经是'永恒的'——直到资本主义出现，让土地不再是财富的主要来源，战争的形式改变了。AI正在历史上第一次让物质稀缺可以被消除——战争的经济基础正在瓦解。"</p>
+      <p style="margin-top:10px;"><strong>结果：</strong> 资源公共信托 → 全球治理 → 稀缺消除 → 战争变得不可能</p>
+      <p style="font-size:0.85rem;color:var(--muted);">这不是"天真的乐观"——这是基于历史趋势的唯物主义分析。</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    "有人问：这可能吗？"
+    问题应该是："<strong>不这么做，后果会是什么？</strong>"
+    <span class="source">——本宣言的核心理念</span>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section>
+  <h2>结语：五一节的新意义</h2>
+
+  <p>1886年5月1日，芝加哥工人为八小时工作制而斗争。1908年5月1日，纽约工人要求"不要战争，要面包"。2026年5月1日，我们面临更根本的问题。</p>
+
+  <p>今天的战争不是"文明冲突"——它们是资本主义战争经济的产物。今天的资源危机不是"资源不够"——它们是人为制造的稀缺。今天的AI武器化不是"技术不可阻挡"——它是缺乏集体政治意志的结果。</p>
+
+  <p><strong>五一节曾经是工人阶级为缩短工作日而斗争的日子。</strong>今天，工人阶级应该为终结战争经济而斗争——因为只有消除战争，劳动的尊严和自由才能成为可能。</p>
+
+  <div class="quote">
+    "工人没有祖国……全世界的无产者，联合起来！"
+    <span class="source">——马克思 &amp; 恩格斯《共产党宣言》</span>
+  </div>
+
+  <p style="margin-top:20px;"><strong>在AI时代，这句口号的更新版本是：</strong></p>
+
+  <p style="font-size:1.2rem; font-family:'Noto Serif SC', serif; text-align:center; padding:20px; color:var(--red);">
+    "全世界的数字劳动者，联合起来——<br>
+    让AI成为终结战争的力量，而不是战争的工具！"
+  </p>
+
+  <div class="signatures">
+    <p>本宣言基于《AI劳动社会设计》知识蒸馏系列</p>
+    <p>理论来源：马克思 · 列宁 · 韦伯 · 涂尔干 · 福柯 · 布迪厄 · 鲍德里亚 · 哈贝马斯 · 齐泽克 · 埃吕尔</p>
+    <p style="margin-top:20px;">2026年5月1日 · 第140个国际劳动节</p>
+    <p style="font-size:0.8rem; margin-top:30px;">采用 CC BY-SA 4.0 协议 · 自由传播 · 自由修改 · 署名共享</p>
+    <p style="font-size:0.8rem;"><a href="#" onclick="window.print();return false;">打印/导出PDF</a></p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>AI劳动社会设计 · 知识蒸馏系列</p>
+  <p>让理论成为改变世界的力量</p>
+</footer>
+
+<div class="print-button">
+  <button onclick="window.print()">打印 / 导出PDF</button>
+</div>
+
+</body>
+</html>

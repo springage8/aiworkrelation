@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Labor Society Design · Multilingual Portal</title>
+<style>
+  :root {
+    --red: #c0392b;
+    --dark-red: #922b21;
+    --gold: #f39c12;
+    --light-bg: #fdf6ec;
+    --dark-bg: #1a1a2e;
+    --card-bg: #fff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  /* Banner */
+  .banner {
+    background: linear-gradient(135deg, var(--dark-red), #5a1a1a);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .banner::before {
+    content: "⚡";
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    font-size: 80px;
+    opacity: 0.15;
+    transform: rotate(-15deg);
+  }
+  .banner::after {
+    content: "✊";
+    position: absolute;
+    right: 8%;
+    top: 15%;
+    font-size: 70px;
+    opacity: 0.15;
+  }
+  .banner h1 { font-size: 2.2rem; margin-bottom: 10px; letter-spacing: 1px; }
+  .banner h1 span { color: var(--gold); }
+  .banner .subtitle { font-size: 1.1rem; opacity: 0.85; margin-bottom: 6px; }
+  .banner .date { font-size: 0.9rem; opacity: 0.6; }
+  .banner .tagline {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 0.95rem;
+    opacity: 0.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Download all */
+  .download-bar {
+    background: var(--dark-bg);
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  .download-bar a {
+    color: var(--gold);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  .download-bar a:hover { text-decoration: underline; }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 25px 20px 10px;
+    position: sticky;
+    top: 0;
+    background: var(--light-bg);
+    z-index: 100;
+    border-bottom: 1px solid #e0d5c7;
+  }
+  .controls input {
+    padding: 10px 18px;
+    border: 2px solid #d5c5b0;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    width: 260px;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .controls input:focus { border-color: var(--red); }
+  .controls select {
+    padding: 10px 18px;
+    border: 2px solid #d5c5b0;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  .lang-count {
+    text-align: center;
+    padding: 5px 20px 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  .lang-count strong { color: var(--red); font-size: 1.2rem; }
+
+  /* Language Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .lang-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-decoration: none;
+    color: var(--text);
+    border: 2px solid #e8ddd0;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  .lang-card:hover {
+    border-color: var(--red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(192,57,43,0.12);
+  }
+  .lang-card .native {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .lang-card .name {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+  .lang-card .code {
+    display: inline-block;
+    padding: 2px 10px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-family: monospace;
+    letter-spacing: 0.5px;
+  }
+  .lang-card .status {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+  .lang-card .status.ready { background: #e8f5e9; color: #2e7d32; }
+  .lang-card .status.pending { background: #fff3e0; color: #e65100; }
+  .lang-card.highlight {
+    border-color: var(--gold);
+    background: #fffbf0;
+  }
+  .lang-card.highlight .native::after {
+    content: " ⭐";
+    font-size: 0.8rem;
+  }
+  .no-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: var(--text-light);
+  }
+
+  /* Section headers */
+  .region-header {
+    grid-column: 1 / -1;
+    padding: 20px 0 8px 0;
+    font-size: 1.3rem;
+    color: var(--dark-red);
+    border-bottom: 2px solid #e8ddd0;
+    margin-top: 10px;
+  }
+  .region-header small {
+    font-weight: normal;
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid #e0d5c7;
+    margin-top: 30px;
+  }
+  .footer a { color: var(--red); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .license { margin-top: 8px; opacity: 0.7; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .banner h1 { font-size: 1.5rem; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; padding: 12px; }
+    .lang-card { padding: 14px 10px; }
+    .lang-card .native { font-size: 0.95rem; }
+    .controls { flex-direction: column; align-items: center; }
+    .controls input { width: 100%; max-width: 300px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <h1><span>✦</span> AI Labor Society Design <span>✦</span></h1>
+  <div class="subtitle">May Day Manifesto · Relations of Production in the AI Era</div>
+  <div class="date">May 1, 2026 — International Workers' Day</div>
+  <div class="tagline">"The philosophers have only interpreted the world in various ways; the point is to change it." — Marx</div>
+</div>
+
+<div class="download-bar">
+  🌍 <strong>Multilingual Edition</strong> —
+  This manifesto is available in <span id="langCountDisplay">65</span> languages.
+  <br class="mobile-break" style="display:none">
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+  ·
+  <a href="../README.md">Full Project</a>
+  ·
+  <a href="../2026_五一劳动节和平宣言.html">Peace Declaration (中文)</a>
+</div>
+
+<div class="controls">
+  <input type="text" id="searchInput" placeholder="🔍 Search language / 搜索 / 探す / بحث..." oninput="filterLanguages()">
+  <select id="regionFilter" onchange="filterLanguages()">
+    <option value="all">All Regions</option>
+    <option value="sinitic">Sinitic (中文)</option>
+    <option value="romance">Romance</option>
+    <option value="germanic">Germanic</option>
+    <option value="slavic">Slavic</option>
+    <option value="east-asian">East Asian</option>
+    <option value="south-asian">South Asian</option>
+    <option value="middle-east">Middle East</option>
+    <option value="african">African</option>
+    <option value="other-europe">Other European</option>
+    <option value="constructed">Constructed</option>
+  </select>
+</div>
+<div class="lang-count">🌐 <strong id="visibleCount">0</strong> languages displayed</div>
+
+<div class="grid" id="langGrid">
+  <!-- Languages will be populated by JavaScript -->
+</div>
+
+<div class="footer">
+  <p><strong>AI Labor Society Design</strong> — A knowledge distillation project</p>
+  <p>Marx · Weber · Durkheim · Foucault · Bourdieu · Baudrillard · Žižek · Habermas · Ellul</p>
+  <p class="license">
+    This work is licensed under
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+    — freely share, freely modify, with attribution and share-alike.
+  </p>
+  <p style="margin-top:12px;font-size:0.8rem;opacity:0.6;">
+    ✊ May Day · International Workers' Day · 五一国际劳动节 · يوم العمال العالمي
+  </p>
+</div>
+
+<script>
+const languages = [
+  // Sinitic
+  { code: 'zh', native: '简体中文', name: 'Chinese (Simplified)', file: 'manifesto_zh.md', region: 'sinitic', ready: true, highlight: true },
+  { code: 'zh_Hant', native: '繁體中文', name: 'Chinese (Traditional)', file: 'manifesto_zh_Hant.md', region: 'sinitic', ready: true },
+
+  // Romance
+  { code: 'es', native: 'Español', name: 'Spanish', file: 'manifesto_es.md', region: 'romance', ready: true },
+  { code: 'fr', native: 'Français', name: 'French', file: 'manifesto_fr.md', region: 'romance', ready: true },
+  { code: 'pt', native: 'Português', name: 'Portuguese', file: 'manifesto_pt.md', region: 'romance', ready: true },
+  { code: 'it', native: 'Italiano', name: 'Italian', file: 'manifesto_it.md', region: 'romance', ready: true },
+  { code: 'ro', native: 'Română', name: 'Romanian', file: 'manifesto_ro.md', region: 'romance', ready: true },
+
+  // Germanic
+  { code: 'de', native: 'Deutsch', name: 'German', file: 'manifesto_de.md', region: 'germanic', ready: true },
+  { code: 'nl', native: 'Nederlands', name: 'Dutch', file: 'manifesto_nl.md', region: 'germanic', ready: true },
+  { code: 'sv', native: 'Svenska', name: 'Swedish', file: 'manifesto_sv.md', region: 'germanic', ready: true },
+  { code: 'da', native: 'Dansk', name: 'Danish', file: 'manifesto_da.md', region: 'germanic', ready: true },
+  { code: 'no', native: 'Norsk', name: 'Norwegian', file: 'manifesto_no.md', region: 'germanic', ready: true },
+  { code: 'af', native: 'Afrikaans', name: 'Afrikaans', file: 'manifesto_af.md', region: 'germanic', ready: true },
+
+  // Slavic
+  { code: 'ru', native: 'Русский', name: 'Russian', file: 'manifesto_ru.md', region: 'slavic', ready: true },
+  { code: 'pl', native: 'Polski', name: 'Polish', file: 'manifesto_pl.md', region: 'slavic', ready: true },
+  { code: 'uk', native: 'Українська', name: 'Ukrainian', file: 'manifesto_uk.md', region: 'slavic', ready: true },
+  { code: 'cs', native: 'Čeština', name: 'Czech', file: 'manifesto_cs.md', region: 'slavic', ready: true },
+  { code: 'bg', native: 'Български', name: 'Bulgarian', file: 'manifesto_bg.md', region: 'slavic', ready: true },
+  { code: 'sr', native: 'Српски', name: 'Serbian', file: 'manifesto_sr.md', region: 'slavic', ready: true },
+  { code: 'hr', native: 'Hrvatski', name: 'Croatian', file: 'manifesto_hr.md', region: 'slavic', ready: true },
+  { code: 'sk', native: 'Slovenčina', name: 'Slovak', file: 'manifesto_sk.md', region: 'slavic', ready: true },
+  { code: 'sl', native: 'Slovenščina', name: 'Slovenian', file: 'manifesto_sl.md', region: 'slavic', ready: true },
+
+  // East Asian
+  { code: 'ja', native: '日本語', name: 'Japanese', file: 'manifesto_ja.md', region: 'east-asian', ready: true },
+  { code: 'ko', native: '한국어', name: 'Korean', file: 'manifesto_ko.md', region: 'east-asian', ready: true },
+  { code: 'th', native: 'ไทย', name: 'Thai', file: 'manifesto_th.md', region: 'east-asian', ready: true },
+  { code: 'vi', native: 'Tiếng Việt', name: 'Vietnamese', file: 'manifesto_vi.md', region: 'east-asian', ready: true },
+  { code: 'my', native: 'မြန်မာဘာသာ', name: 'Burmese', file: 'manifesto_my.md', region: 'east-asian', ready: true },
+  { code: 'km', native: 'ភាសាខ្មែរ', name: 'Khmer', file: 'manifesto_km.md', region: 'east-asian', ready: true },
+  { code: 'id', native: 'Bahasa Indonesia', name: 'Indonesian', file: 'manifesto_id.md', region: 'east-asian', ready: true },
+  { code: 'ms', native: 'Bahasa Melayu', name: 'Malay', file: 'manifesto_ms.md', region: 'east-asian', ready: true },
+
+  // South Asian
+  { code: 'hi', native: 'हिन्दी', name: 'Hindi', file: 'manifesto_hi.md', region: 'south-asian', ready: true },
+  { code: 'bn', native: 'বাংলা', name: 'Bengali', file: 'manifesto_bn.md', region: 'south-asian', ready: true },
+  { code: 'ur', native: 'اردو', name: 'Urdu', file: 'manifesto_ur.md', region: 'south-asian', ready: true },
+  { code: 'ta', native: 'தமிழ்', name: 'Tamil', file: 'manifesto_ta.md', region: 'south-asian', ready: true },
+  { code: 'pa', native: 'ਪੰਜਾਬੀ', name: 'Punjabi', file: 'manifesto_pa.md', region: 'south-asian', ready: true },
+  { code: 'gu', native: 'ગુજરાતી', name: 'Gujarati', file: 'manifesto_gu.md', region: 'south-asian', ready: true },
+  { code: 'mr', native: 'मराठी', name: 'Marathi', file: 'manifesto_mr.md', region: 'south-asian', ready: true },
+  { code: 'te', native: 'తెలుగు', name: 'Telugu', file: 'manifesto_te.md', region: 'south-asian', ready: true },
+  { code: 'kn', native: 'ಕನ್ನಡ', name: 'Kannada', file: 'manifesto_kn.md', region: 'south-asian', ready: true },
+  { code: 'ml', native: 'മലയാളം', name: 'Malayalam', file: 'manifesto_ml.md', region: 'south-asian', ready: true },
+  { code: 'ne', native: 'नेपाली', name: 'Nepali', file: 'manifesto_ne.md', region: 'south-asian', ready: true },
+  { code: 'si', native: 'සිංහල', name: 'Sinhala', file: 'manifesto_si.md', region: 'south-asian', ready: true },
+
+  // Middle East
+  { code: 'ar', native: 'العربية', name: 'Arabic', file: 'manifesto_ar.md', region: 'middle-east', ready: true },
+  { code: 'fa', native: 'فارسی', name: 'Persian', file: 'manifesto_fa.md', region: 'middle-east', ready: true },
+  { code: 'tr', native: 'Türkçe', name: 'Turkish', file: 'manifesto_tr.md', region: 'middle-east', ready: true },
+  { code: 'he', native: 'עברית', name: 'Hebrew', file: 'manifesto_he.md', region: 'middle-east', ready: true },
+  { code: 'ku', native: 'Kurmancî', name: 'Kurdish', file: 'manifesto_ku.md', region: 'middle-east', ready: true },
+
+  // African
+  { code: 'sw', native: 'Kiswahili', name: 'Swahili', file: 'manifesto_sw.md', region: 'african', ready: true },
+  { code: 'ha', native: 'Hausa', name: 'Hausa', file: 'manifesto_ha.md', region: 'african', ready: true },
+  { code: 'yo', native: 'Yorùbá', name: 'Yoruba', file: 'manifesto_yo.md', region: 'african', ready: true },
+  { code: 'ig', native: 'Igbo', name: 'Igbo', file: 'manifesto_ig.md', region: 'african', ready: true },
+  { code: 'am', native: 'አማርኛ', name: 'Amharic', file: 'manifesto_am.md', region: 'african', ready: true },
+  { code: 'zu', native: 'isiZulu', name: 'Zulu', file: 'manifesto_zu.md', region: 'african', ready: true },
+  { code: 'so', native: 'Soomaali', name: 'Somali', file: 'manifesto_so.md', region: 'african', ready: true },
+
+  // Other European
+  { code: 'el', native: 'Ελληνικά', name: 'Greek', file: 'manifesto_el.md', region: 'other-europe', ready: true },
+  { code: 'hu', native: 'Magyar', name: 'Hungarian', file: 'manifesto_hu.md', region: 'other-europe', ready: true },
+  { code: 'fi', native: 'Suomi', name: 'Finnish', file: 'manifesto_fi.md', region: 'other-europe', ready: true },
+  { code: 'et', native: 'Eesti', name: 'Estonian', file: 'manifesto_et.md', region: 'other-europe', ready: true },
+  { code: 'lv', native: 'Latviešu', name: 'Latvian', file: 'manifesto_lv.md', region: 'other-europe', ready: true },
+  { code: 'lt', native: 'Lietuvių', name: 'Lithuanian', file: 'manifesto_lt.md', region: 'other-europe', ready: true },
+  { code: 'is', native: 'Íslenska', name: 'Icelandic', file: 'manifesto_is.md', region: 'other-europe', ready: true },
+  { code: 'mt', native: 'Malti', name: 'Maltese', file: 'manifesto_mt.md', region: 'other-europe', ready: true },
+
+  // Constructed
+  { code: 'eo', native: 'Esperanto', name: 'Esperanto', file: 'manifesto_eo.md', region: 'constructed', ready: true },
+  { code: 'la', native: 'Latina', name: 'Latin', file: 'manifesto_la.md', region: 'constructed', ready: true },
+];
+
+// Region display names
+const regionNames = {
+  'sinitic': '🇨🇳 Sinitic (中文)',
+  'romance': ' Romance Languages',
+  'germanic': ' Germanic Languages',
+  'slavic': ' Slavic Languages',
+  'east-asian': '🌏 East Asian Languages',
+  'south-asian': '🪷 South Asian Languages',
+  'middle-east': '☪️ Middle Eastern Languages',
+  'african': '🌍 African Languages',
+  'other-europe': ' Other European Languages',
+  'constructed': '🧩 Constructed Languages'
+};
+
+function renderLanguages(list) {
+  const grid = document.getElementById('langGrid');
+  grid.innerHTML = '';
+  let currentRegion = '';
+  const visible = [];
+
+  list.forEach(lang => {
+    if (lang.region !== currentRegion) {
+      currentRegion = lang.region;
+      const header = document.createElement('div');
+      header.className = 'region-header';
+      header.textContent = regionNames[lang.region] || lang.region;
+      grid.appendChild(header);
+    }
+    visible.push(lang);
+
+    const card = document.createElement('a');
+    card.className = 'lang-card' + (lang.highlight ? ' highlight' : '');
+    card.href = lang.file;
+    card.target = '_blank';
+
+    const statusClass = lang.ready ? 'ready' : 'pending';
+    const statusText = lang.ready ? '✅ Available' : '⏳ In progress';
+
+    card.innerHTML = `
+      <div class="native">${lang.native}</div>
+      <div class="name">${lang.name}</div>
+      <span class="code">${lang.code}</span>
+      <div class="status ${statusClass}">${statusText}</div>
+    `;
+    grid.appendChild(card);
+  });
+
+  document.getElementById('visibleCount').textContent = visible.length;
+}
+
+function filterLanguages() {
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+  const region = document.getElementById('regionFilter').value;
+
+  let filtered = languages;
+
+  if (region !== 'all') {
+    filtered = filtered.filter(l => l.region === region);
+  }
+
+  if (search) {
+    filtered = filtered.filter(l =>
+      l.native.toLowerCase().includes(search) ||
+      l.name.toLowerCase().includes(search) ||
+      l.code.toLowerCase().includes(search) ||
+      l.region.includes(search)
+    );
+  }
+
+  renderLanguages(filtered);
+}
+
+// Auto-detect user language and scroll to / highlight it
+function detectAndHighlight() {
+  const userLang = navigator.language || navigator.userLanguage || '';
+  const langPrefix = userLang.split('-')[0];
+
+  // Try to find exact match
+  const match = languages.find(l => l.code === langPrefix);
+  if (match) {
+    // We'll just show a message at top
+    const notice = document.createElement('div');
+    notice.style.cssText = `
+      text-align: center; padding: 10px 20px; background: #fff8e1;
+      font-size: 0.9rem; border-bottom: 1px solid #ffe082;
+    `;
+    notice.innerHTML = `🌐 Detected language: <strong>${match.native}</strong> (${match.name}) —
+      <a href="${match.file}" style="color:#c0392b;font-weight:600;">Read in your language →</a>`;
+    document.querySelector('.controls').after(notice);
+  }
+}
+
+// Initial render
+renderLanguages(languages);
+document.getElementById('langCountDisplay').textContent = languages.filter(l => l.ready).length;
+detectAndHighlight();
+filterLanguages();
+
+// Also set total count
+setTimeout(() => {
+  document.getElementById('langCountDisplay').textContent = languages.filter(l => l.ready).length;
+}, 100);
+</script>
+</body>
+</html>

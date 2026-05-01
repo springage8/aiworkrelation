@@ -59,5 +59,28 @@ AI技术正在以前所未有的速度重塑人类的劳动方式、生产关系
 
 ---
 
+## 多语言版本 (Multilingual Editions)
+
+🌐 本项目核心宣言已翻译为 **65 种语言/方言**，可通过多语言门户访问。
+
+👉 **打开多语言门户:** [`multilingual/index.html`](multilingual/index.html)
+
+| 语系 | 包含语言 | 文件数 |
+|------|---------|:------:|
+| 🇨🇳 汉语 | 简体中文、繁體中文 | 2 |
+|  Romance | Español, Français, Português, Italiano, Română | 5 |
+|  Germanic | Deutsch, Nederlands, Svenska, Dansk, Norsk, Afrikaans | 6 |
+|  Slavic | Русский, Polski, Українська, Čeština, Български, Српски, Hrvatski, Slovenčina, Slovenščina | 9 |
+| 🌏 East Asian | 日本語, 한국어, ไทย, Tiếng Việt, မြန်မာဘာသာ, ភាសាខ្មែរ, Bahasa Indonesia, Bahasa Melayu | 8 |
+| 🪷 South Asian | हिन्दी, বাংলা, اردو, தமிழ், ਪੰਜਾਬੀ, ગુજરાતી, मराठी, తెలుగు, ಕನ್ನಡ, മലയാളം, नेपाली, සිංහල | 12 |
+| ☪️ Middle East | العربية, فارسی, Türkçe, עברית, Kurmancî | 5 |
+| 🌍 African | Kiswahili, Hausa, Yorùbá, Igbo, አማርኛ, isiZulu, Soomaali | 7 |
+|  Other European | Ελληνικά, Magyar, Suomi, Eesti, Latviešu, Lietuvių, Íslenska, Malti | 8 |
+| 🧩 Constructed | Esperanto, Latina | 2 |
+| 🇬🇧 Bridge | English (source language for translations) | 1 |
+| **总计** | **65 languages / dialects** | **65** |
+
+---
+
 **"哲学家们只是用不同的方式解释世界，问题在于改变世界。"**
 ——马克思《关于费尔巴哈的提纲》

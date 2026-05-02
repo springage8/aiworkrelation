@@ -269,9 +269,70 @@
   <!-- Languages will be populated by JavaScript -->
 </div>
 
+<!-- Strategic Analysis Section -->
+<div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
+  <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
+    📜 AI劳动社会方案 · 毛泽东战略分析
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);">Multi-language Strategic Analysis</small>
+  </h2>
+  <p style="color:var(--text-light);font-size:0.9rem;margin:8px 0 16px;">
+    Strategic supplements: Class Analysis · Protracted War · Jinggangshan Path
+  </p>
+</div>
+<div class="grid" id="strategyGrid" style="margin-top:0;">
+  <!-- Strategic analysis cards will be populated by JavaScript -->
+</div>
+
+<!-- Regional Action Plans Section -->
+<div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
+  <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
+    🌍 区域行动方案 · Regional Action Plans
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);"></small>
+  </h2>
+</div>
+<div class="grid" id="actionGrid" style="margin-top:0;">
+</div>
+
+<!-- Action Toolkit Section -->
+<div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
+  <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
+    🛠️ 可执行工具包 · Action Toolkit
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);"></small>
+  </h2>
+</div>
+<div class="grid" id="toolkitGrid" style="margin-top:0;">
+</div>
+
+<!-- Jesus Document Section -->
+<div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
+  <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
+    ✝ 心灵的眼睛 · The Eyes of the Heart
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);">爱与公义的呼召</small>
+  </h2>
+</div>
+<div class="grid" style="margin-top:0;">
+  <a href="../20_耶稣_论AI时代的爱与公义.md" target="_blank"
+     style="grid-column:1/-1;background:linear-gradient(135deg,#fff5f0,#fdf6ec);border-radius:12px;padding:24px 20px;text-decoration:none;color:var(--text);border:2px solid #e8ddd0;transition:all 0.25s ease;display:flex;flex-direction:column;cursor:pointer;"
+     onmouseover="this.style.borderColor='var(--red)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 25px rgba(192,57,43,0.12)';"
+     onmouseout="this.style.borderColor='#e8ddd0';this.style.transform='';this.style.boxShadow='';">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:2rem;">✝</div>
+      <div style="flex-grow:1;">
+        <div style="font-weight:700;font-size:1.15rem;margin-bottom:4px;">论AI时代的爱与公义</div>
+        <div style="font-size:0.9rem;color:var(--text-light);margin-bottom:4px;">Love and Righteousness in the AI Era — A Sermon on the Mount</div>
+        <div style="font-size:0.8rem;color:var(--text-light);">"凡劳苦担重担的人，可以到我这里来，我就使你们得安息。" — 耶稣</div>
+      </div>
+      <div style="font-size:0.85rem;color:var(--red);font-weight:600;white-space:nowrap;">Read the Sermon →</div>
+    </div>
+  </a>
+</div>
+
 <div class="footer">
   <p><strong>AI Labor Society Design</strong> — A knowledge distillation project</p>
-  <p>Marx · Weber · Durkheim · Foucault · Bourdieu · Baudrillard · Žižek · Habermas · Ellul</p>
+  <p>Marx · Weber · Durkheim · Foucault · Bourdieu · Baudrillard · Žižek · Habermas · Ellul · Mao</p>
+  <p style="margin-top:8px;font-size:0.85rem;color:var(--red);font-style:italic;">
+    ✝ "爱你的邻舍如同自己。"——这两条诫命是律法和先知一切道理的总纲。
+  </p>
   <p class="license">
     This work is licensed under
     <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
@@ -471,6 +532,119 @@ filterLanguages();
 setTimeout(() => {
   document.getElementById('langCountDisplay').textContent = languages.filter(l => l.ready).length;
 }, 100);
+
+// Strategic Analysis Documents (Mao Zedong supplements)
+const strategyDocs = [
+  { id: '11', title: 'AI时代各阶级的分析', titleEn: 'Analysis of Classes in the AI Era', icon: '🔍',
+    files: [
+      { lang: '中文', native: '简体中文', file: '../11_毛泽东_AI时代各阶级的分析.md', code: 'zh' },
+      { lang: 'English', native: 'English', file: '11_mao_analysis_of_classes_en.md', code: 'en' },
+      { lang: 'Español', native: 'Español', file: '11_mao_analisis_clases_es.md', code: 'es' },
+      { lang: 'Português', native: 'Português', file: '11_mao_analise_classes_pt.md', code: 'pt' },
+      { lang: 'Français', native: 'Français', file: '11_mao_analysis_of_classes_fr.md', code: 'fr' },
+      { lang: '日本語', native: '日本語', file: '11_mao_analysis_of_classes_ja.md', code: 'ja' },
+      { lang: '한국어', native: '한국어', file: '11_mao_analysis_of_classes_ko.md', code: 'ko' },
+    ]
+  },
+  { id: '12', title: '论AI时代的持久战', titleEn: 'On Protracted War in the AI Era', icon: '⚔️',
+    files: [
+      { lang: '中文', native: '简体中文', file: '../12_毛泽东_论AI时代的持久战.md', code: 'zh' },
+      { lang: 'English', native: 'English', file: '12_mao_protracted_war_en.md', code: 'en' },
+      { lang: 'Español', native: 'Español', file: '12_mao_guerra_prolongada_es.md', code: 'es' },
+      { lang: 'Português', native: 'Português', file: '12_mao_guerra_prolongada_pt.md', code: 'pt' },
+    ]
+  },
+  { id: '13', title: '数据公有制的井冈山道路', titleEn: 'The Jinggangshan Path of Data Commons', icon: '⛰️',
+    files: [
+      { lang: '中文', native: '简体中文', file: '../13_毛泽东_数据公有制的井冈山道路.md', code: 'zh' },
+      { lang: 'English', native: 'English', file: '13_mao_jinggangshan_en.md', code: 'en' },
+      { lang: 'Español', native: 'Español', file: '13_mao_jinggangshan_es.md', code: 'es' },
+      { lang: 'Português', native: 'Português', file: '13_mao_jinggangshan_pt.md', code: 'pt' },
+    ]
+  }
+];
+
+function renderStrategyDocs() {
+  const grid = document.getElementById('strategyGrid');
+  grid.innerHTML = '';
+
+  strategyDocs.forEach(doc => {
+    // Create a card for the doc itself
+    const docCard = document.createElement('div');
+    docCard.style.cssText = 'grid-column:1/-1;background:var(--card-bg);border-radius:12px;padding:20px;border:2px solid #e8ddd0;';
+    docCard.innerHTML = `
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+        <span style="font-size:1.5rem;">${doc.icon}</span>
+        <div>
+          <div style="font-weight:700;font-size:1.05rem;">${doc.title}</div>
+          <div style="font-size:0.85rem;color:var(--text-light);">${doc.titleEn}</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        ${doc.files.map(f => `
+          <a href="${f.file}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;padding:6px 14px;background:var(--light-bg);border-radius:20px;text-decoration:none;color:var(--text);font-size:0.85rem;border:1px solid #e0d5c7;transition:all 0.2s;"
+             onmouseover="this.style.borderColor='var(--red)';this.style.background='#fff5f0';"
+             onmouseout="this.style.borderColor='#e0d5c7';this.style.background='var(--light-bg)';">
+            <span>${f.native}</span>
+            <span style="font-size:0.7rem;color:var(--text-light);">${f.lang}</span>
+          </a>
+        `).join('')}
+      </div>
+    `;
+    grid.appendChild(docCard);
+  });
+}
+
+renderStrategyDocs();
+
+// Regional Action Plans
+const actionPlans = [
+  { id: '14', title: '非洲AI劳动者组织方案', titleEn: 'Africa AI Workers Organizing Plan', icon: '🌍',
+    desc: '从数据殖民到数字解放——东非数据标注员、西非平台工人、南非劳工联盟',
+    file: '../14_毛泽东_非洲AI劳动者组织方案.md' },
+  { id: '15', title: '东南亚数字劳动者联盟方案', titleEn: 'SE Asia Digital Workers Alliance Plan', icon: '🌏',
+    desc: '跨越国界的Grab/Gojek骑手团结——利用中美科技竞争裂缝',
+    file: '../15_毛泽东_东南亚数字劳动者联盟方案.md' },
+  { id: '16', title: '南亚数据标注员权利运动方案', titleEn: 'South Asia Data Annotators Rights Plan', icon: '🪷',
+    desc: 'AI产业链最低端的第一声呐喊——印度/巴基斯坦/孟加拉国',
+    file: '../16_毛泽东_南亚数据标注员权利运动方案.md' },
+];
+
+const toolkit = [
+  { id: '17', title: '数据公共信托项目执行手册', titleEn: 'Data Trust Project Execution Manual', icon: '📋',
+    desc: '从理论到落地：启动→建设→运营→扩展→退出的完整操作指南',
+    file: '../17_毛泽东_数据公共信托项目执行手册.md' },
+  { id: '18', title: '数字劳动者组织动员手册', titleEn: 'Digital Workers Organizing Manual', icon: '✊',
+    desc: '从原子化到组织化：从第一个WhatsApp群到跨国工会的方法论',
+    file: '../18_毛泽东_数字劳动者组织动员手册.md' },
+  { id: '19', title: 'AI劳动社会方案政策提案模板', titleEn: 'AI Labor Policy Proposal Template', icon: '📜',
+    desc: '给立法者：数据权利法案→算法治理法案→数字劳工保护法—现成模板',
+    file: '../19_毛泽东_AI劳动社会方案政策提案模板.md' },
+];
+
+function renderDocGrid(gridId, docs) {
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = '';
+  docs.forEach(doc => {
+    const card = document.createElement('a');
+    card.href = doc.file;
+    card.target = '_blank';
+    card.style.cssText = 'background:var(--card-bg);border-radius:12px;padding:20px 16px;text-decoration:none;color:var(--text);border:2px solid #e8ddd0;transition:all 0.25s ease;display:flex;flex-direction:column;cursor:pointer;';
+    card.onmouseover = function() { this.style.borderColor = 'var(--red)'; this.style.transform = 'translateY(-3px)'; this.style.boxShadow = '0 8px 25px rgba(192,57,43,0.12)'; };
+    card.onmouseout = function() { this.style.borderColor = '#e8ddd0'; this.style.transform = ''; this.style.boxShadow = ''; };
+    card.innerHTML = `
+      <div style="font-size:1.5rem;margin-bottom:8px;">${doc.icon}</div>
+      <div style="font-weight:700;font-size:1rem;margin-bottom:4px;">${doc.title}</div>
+      <div style="font-size:0.8rem;color:var(--text-light);margin-bottom:8px;">${doc.titleEn}</div>
+      <div style="font-size:0.85rem;color:var(--text);flex-grow:1;">${doc.desc}</div>
+      <div style="margin-top:10px;font-size:0.75rem;color:var(--red);font-weight:600;">Read more →</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+renderDocGrid('actionGrid', actionPlans);
+renderDocGrid('toolkitGrid', toolkit);
 </script>
 </body>
 </html>

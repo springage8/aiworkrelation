@@ -1,5 +1,23 @@
 # 变更日志
 
+## [1.4.0] — 2026-05-02 — 万国群英谱多语化：30种母语翻译 + 跨文化对话
+
+### 新增（英雄母语翻译）
+- 新增 30篇英雄文档母语翻译文件，存放于 `multilingual/` 目录
+- 每篇包含：全文母语翻译 + 跨文化对话（英雄评论2-3位异文化英豪）
+- 覆盖语言：EN/FR/DE/IT/ES/LA/RU/EL/JA/KO/VI/HI/AR/FA/TR（15种外语）
+
+### 翻译清单
+- **西欧组**（12篇）：Napoléon(fr), Bismarck(de), Churchill(en), Caesar(la), Machiavelli(it), Hitler(de), Elizabeth I(en), Voltaire(fr), Washington(en), Hamilton(en), Lincoln(en), Roosevelt(en)
+- **美洲组**（3篇）：Bolívar(es), Jefferson(en), 含中文27-32追加跨语对话
+- **俄希组**（5篇）：Lenin(ru), Stalin(ru), Peter the Great(ru), Pericles(el), Plato(el)
+- **东亚组**（7篇）：Gandhi(hi), Lee Kuan Yew(en), Ashoka(hi), Tokugawa(ja), Mandela(en), Hồ Chí Minh(vi), Sejong(ko)
+- **中东组**（4篇）：Ibn Khaldun(ar), Kemal Atatürk(tr), Genghis Khan(en), Cyrus the Great(fa)
+
+### 功能更新
+- 多语言门户 `multilingual/index.html` 新增「万国群英 · Heroes Across Languages」板块
+- 原中文27-32号文档追加「跨语对话」段落
+
 ## [1.3.0] — 2026-05-02 — 万国群英谱：36位英豪论AI治理
 
 ### 新增（东亚篇）

@@ -303,6 +303,19 @@
 <div class="grid" id="toolkitGrid" style="margin-top:0;">
 </div>
 
+<!-- Heroes Across Languages Section -->
+<div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
+  <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
+    👑 万国群英 · Heroes Across Languages
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);">36 historical figures on AI governance, in their native tongues</small>
+  </h2>
+  <p style="color:var(--text-light);font-size:0.9rem;margin:8px 0 16px;">
+    Each hero's vision translated into their own language with cross-cultural dialogues
+  </p>
+</div>
+<div class="grid" id="heroesGrid" style="margin-top:0;">
+</div>
+
 <!-- Jesus Document Section -->
 <div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
   <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
@@ -645,6 +658,78 @@ function renderDocGrid(gridId, docs) {
 
 renderDocGrid('actionGrid', actionPlans);
 renderDocGrid('toolkitGrid', toolkit);
+
+// Heroes Across Languages
+const heroLangDocs = [
+  { region: '西欧 · Western Europe', docs: [
+    { id: '33', name: 'Napoléon', title: 'Code & AI', lang: 'Français', file: '33_napoleon_fr.md', code: 'fr' },
+    { id: '34', name: 'Bismarck', title: 'Realpolitik & AI', lang: 'Deutsch', file: '34_bismarck_de.md', code: 'de' },
+    { id: '35', name: 'Churchill', title: 'Democracy & AI', lang: 'English', file: '35_churchill_en.md', code: 'en' },
+    { id: '36', name: 'Caesar', title: 'Crossing the Rubicon', lang: 'Latina', file: '36_caesar_la.md', code: 'la' },
+    { id: '37', name: 'Machiavelli', title: 'The Prince & AI', lang: 'Italiano', file: '37_machiavelli_it.md', code: 'it' },
+    { id: '38', name: 'Hitler', title: 'Warning: Totalitarian AI', lang: 'Deutsch', file: '38_hitler_de.md', code: 'de' },
+    { id: '43', name: 'Elizabeth I', title: 'Prudence & Data', lang: 'English', file: '43_elizabeth_en.md', code: 'en' },
+    { id: '44', name: 'Voltaire', title: 'Reason & AI', lang: 'Français', file: '44_voltaire_fr.md', code: 'fr' },
+  ]},
+  { region: '美洲 · Americas', docs: [
+    { id: '45', name: 'Washington', title: 'Republican AI', lang: 'English', file: '45_washington_en.md', code: 'en' },
+    { id: '46', name: 'Hamilton', title: 'Strong Gov & Data', lang: 'English', file: '46_hamilton_en.md', code: 'en' },
+    { id: '47', name: 'Lincoln', title: 'Of the People, for AI', lang: 'English', file: '47_lincoln_en.md', code: 'en' },
+    { id: '48', name: 'Roosevelt', title: 'Four Freedoms & AI', lang: 'English', file: '48_roosevelt_en.md', code: 'en' },
+    { id: '49', name: 'Bolívar', title: 'Liberación digital', lang: 'Español', file: '49_bolivar_es.md', code: 'es' },
+    { id: '50', name: 'Jefferson', title: 'Agrarian AI', lang: 'English', file: '50_jefferson_en.md', code: 'en' },
+  ]},
+  { region: '俄希 · Slavic & Hellenic', docs: [
+    { id: '39', name: 'Lenin', title: 'Data Imperialism', lang: 'Русский', file: '39_lenin_ru.md', code: 'ru' },
+    { id: '40', name: 'Stalin', title: 'Algorithmic Planning', lang: 'Русский', file: '40_stalin_ru.md', code: 'ru' },
+    { id: '41', name: 'Peter the Great', title: 'Tech Modernization', lang: 'Русский', file: '41_peter_ru.md', code: 'ru' },
+    { id: '42', name: 'Pericles', title: 'Algorithmic Democracy', lang: 'Ελληνικά', file: '42_pericles_el.md', code: 'el' },
+    { id: '59', name: 'Plato', title: 'Philosopher King AI', lang: 'Ελληνικά', file: '59_plato_el.md', code: 'el' },
+  ]},
+  { region: '东亚 · East Asia', docs: [
+    { id: '51', name: 'Gandhi', title: 'Non-violence & AI', lang: 'हिन्दी', file: '51_gandhi_hi.md', code: 'hi' },
+    { id: '52', name: 'Lee Kuan Yew', title: 'Meritocracy & Smart Nation', lang: 'English', file: '52_lik_kuan_yew_en.md', code: 'en' },
+    { id: '53', name: 'Ashoka', title: 'Dharma & Algorithm', lang: 'हिन्दी', file: '53_ashoka_hi.md', code: 'hi' },
+    { id: '54', name: 'Tokugawa Ieyasu', title: 'Stability & Algorithm', lang: '日本語', file: '54_tokugawa_ja.md', code: 'ja' },
+    { id: '55', name: 'Mandela', title: 'Reconciliation & AI', lang: 'English', file: '55_mandela_en.md', code: 'en' },
+    { id: '56', name: 'Hồ Chí Minh', title: 'Digital Independence', lang: 'Tiếng Việt', file: '56_hochiminh_vi.md', code: 'vi' },
+    { id: '62', name: 'Sejong the Great', title: 'Communication & AI', lang: '한국어', file: '62_sejong_ko.md', code: 'ko' },
+  ]},
+  { region: '中东 · Middle East', docs: [
+    { id: '57', name: 'Ibn Khaldun', title: 'Civilization Cycles', lang: 'العربية', file: '57_ibn_khaldun_ar.md', code: 'ar' },
+    { id: '58', name: 'Kemal Atatürk', title: 'Secular AI Modernity', lang: 'Türkçe', file: '58_kemal_tr.md', code: 'tr' },
+    { id: '60', name: 'Genghis Khan', title: 'Global Algorithmic Order', lang: 'English', file: '60_genghis_en.md', code: 'en' },
+    { id: '61', name: 'Cyrus the Great', title: 'Data Liberation', lang: 'فارسی', file: '61_cyrus_fa.md', code: 'fa' },
+  ]},
+];
+
+function renderHeroes() {
+  const grid = document.getElementById('heroesGrid');
+  grid.innerHTML = '';
+
+  heroLangDocs.forEach(group => {
+    const header = document.createElement('div');
+    header.className = 'region-header';
+    header.textContent = '👑 ' + group.region;
+    grid.appendChild(header);
+
+    group.docs.forEach(doc => {
+      const card = document.createElement('a');
+      card.href = doc.file;
+      card.target = '_blank';
+      card.className = 'lang-card';
+      card.innerHTML = `
+        <div class="native">${doc.name}</div>
+        <div class="name">${doc.title}</div>
+        <span class="code">${doc.lang} (${doc.code})</span>
+        <div class="status ready">🌐 Translated</div>
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+renderHeroes();
 </script>
 </body>
 </html>

@@ -307,7 +307,7 @@
 <div style="max-width:1300px;margin:20px auto 0;padding:0 20px;">
   <h2 style="color:var(--dark-red);border-bottom:2px solid #e8ddd0;padding-bottom:8px;">
     👑 万国群英 · Heroes Across Languages
-    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);">36 historical figures on AI governance, in their native tongues</small>
+    <small style="font-weight:normal;font-size:0.85rem;color:var(--text-light);">60+ historical figures on AI governance, in 65+ languages with cross-cultural dialogues</small>
   </h2>
   <p style="color:var(--text-light);font-size:0.9rem;margin:8px 0 16px;">
     Each hero's vision translated into their own language with cross-cultural dialogues
@@ -659,7 +659,7 @@ function renderDocGrid(gridId, docs) {
 renderDocGrid('actionGrid', actionPlans);
 renderDocGrid('toolkitGrid', toolkit);
 
-// Heroes Across Languages
+// Heroes Across Languages — Complete 75+ documents
 const heroLangDocs = [
   { region: '西欧 · Western Europe', docs: [
     { id: '33', name: 'Napoléon', title: 'Code & AI', lang: 'Français', file: '33_napoleon_fr.md', code: 'fr' },
@@ -671,6 +671,42 @@ const heroLangDocs = [
     { id: '43', name: 'Elizabeth I', title: 'Prudence & Data', lang: 'English', file: '43_elizabeth_en.md', code: 'en' },
     { id: '44', name: 'Voltaire', title: 'Reason & AI', lang: 'Français', file: '44_voltaire_fr.md', code: 'fr' },
   ]},
+  { region: '北欧 · Nordic & Baltic', docs: [
+    { id: '63', name: 'Gustavus Adolphus', title: 'Military AI Order', lang: 'Dansk', file: '63_gustavus_da.md', code: 'da' },
+    { id: '64', name: 'Gustavus Adolphus', title: 'Battlefield & AI', lang: 'Svenska', file: '64_gustavus_sv.md', code: 'sv' },
+    { id: '65', name: 'F. Nansen', title: 'Exploration & AI', lang: 'Norsk', file: '65_nansen_no.md', code: 'no' },
+    { id: '66', name: 'Mannerheim', title: 'Small State AI', lang: 'Suomi', file: '66_mannerheim_fi.md', code: 'fi' },
+    { id: '67', name: 'Snorri Sturluson', title: 'Saga & Algorithm', lang: 'Íslenska', file: '67_is.md', code: 'is' },
+    { id: '68', name: 'Lennart Meri', title: 'Digital E-Governance', lang: 'Eesti', file: '68_et.md', code: 'et' },
+    { id: '69', name: 'Kārlis Ulmanis', title: 'Data Sovereignty', lang: 'Latviešu', file: '69_lv.md', code: 'lv' },
+  ]},
+  { region: '东欧 · Eastern Europe', docs: [
+    { id: '70', name: 'John Paul II', title: 'Human Dignity & AI', lang: 'Polski', file: '70_paul_II_pl.md', code: 'pl' },
+    { id: '71', name: 'Václav Havel', title: 'Living in Truth', lang: 'Čeština', file: '71_havel_cs.md', code: 'cs' },
+    { id: '72', name: 'Széchenyi I.', title: 'Reform & Balance', lang: 'Magyar', file: '72_szechenyi_hu.md', code: 'hu' },
+    { id: '73', name: 'D. Cantemir', title: 'Bridge Wisdom', lang: 'Română', file: '73_ro.md', code: 'ro' },
+    { id: '74', name: 'Vasil Levski', title: 'Algorithmic Freedom', lang: 'Български', file: '74_bg.md', code: 'bg', extra: [
+      { lang: 'English', file: '74_levski_en.md', code: 'en' },
+    ]},
+    { id: '75', name: 'N. Tesla', title: 'Free Energy AI', lang: 'Hrvatski', file: '75_hr.md', code: 'hr', extra: [
+      { lang: 'English', file: '75_tesla_en.md', code: 'en' },
+    ]},
+    { id: '76', name: 'M. Štefánik', title: 'Stars & AI', lang: 'Slovenčina', file: '76_sk.md', code: 'sk', extra: [
+      { lang: 'English', file: '76_stefanik_en.md', code: 'en' },
+    ]},
+    { id: '77', name: 'P. Trubar', title: 'Language & Algorithm', lang: 'Slovenščina', file: '77_sl.md', code: 'sl', extra: [
+      { lang: 'English', file: '77_trubar_en.md', code: 'en' },
+    ]},
+  ]},
+  { region: '西欧中欧 · West & Central Europe', docs: [
+    { id: '78', name: 'William of Orange', title: 'Algorithmic Freedom', lang: 'Nederlands', file: '78_william_nl.md', code: 'nl' },
+    { id: '79', name: 'Dom Pedro II', title: 'Tropical AI', lang: 'Português', file: '79_pedro_pt.md', code: 'pt' },
+    { id: '80', name: 'Vytautas the G.', title: 'Small State AI', lang: 'Lietuvių', file: '80_vytautas_lt.md', code: 'lt' },
+    { id: '81', name: 'N. Tesla (Срп)', title: 'Open Algorithm', lang: 'Српски', file: '81_sr.md', code: 'sr' },
+    { id: '82', name: 'T. Shevchenko', title: 'Digital Cultural Sov.', lang: 'Українська', file: '82_uk.md', code: 'uk' },
+    { id: '83', name: 'J. de Valette', title: 'Island AI Security', lang: 'Malti', file: '83_mt.md', code: 'mt' },
+    { id: '84', name: 'L. Zamenhof', title: 'Global Communication', lang: 'Esperanto', file: '84_zamenhof_eo.md', code: 'eo' },
+  ]},
   { region: '美洲 · Americas', docs: [
     { id: '45', name: 'Washington', title: 'Republican AI', lang: 'English', file: '45_washington_en.md', code: 'en' },
     { id: '46', name: 'Hamilton', title: 'Strong Gov & Data', lang: 'English', file: '46_hamilton_en.md', code: 'en' },
@@ -678,6 +714,11 @@ const heroLangDocs = [
     { id: '48', name: 'Roosevelt', title: 'Four Freedoms & AI', lang: 'English', file: '48_roosevelt_en.md', code: 'en' },
     { id: '49', name: 'Bolívar', title: 'Liberación digital', lang: 'Español', file: '49_bolivar_es.md', code: 'es' },
     { id: '50', name: 'Jefferson', title: 'Agrarian AI', lang: 'English', file: '50_jefferson_en.md', code: 'en' },
+    { id: '64', name: 'Che Guevara', title: 'Revolution & Data', lang: 'Español', file: '64_che_guevara_es.md', code: 'es',
+      extra: [
+        { lang: 'English', file: '64_che_guevara_en.md', code: 'en' },
+      ]
+    },
   ]},
   { region: '俄希 · Slavic & Hellenic', docs: [
     { id: '39', name: 'Lenin', title: 'Data Imperialism', lang: 'Русский', file: '39_lenin_ru.md', code: 'ru' },
@@ -686,20 +727,70 @@ const heroLangDocs = [
     { id: '42', name: 'Pericles', title: 'Algorithmic Democracy', lang: 'Ελληνικά', file: '42_pericles_el.md', code: 'el' },
     { id: '59', name: 'Plato', title: 'Philosopher King AI', lang: 'Ελληνικά', file: '59_plato_el.md', code: 'el' },
   ]},
-  { region: '东亚 · East Asia', docs: [
+  { region: '非洲 · Africa', docs: [
+    { id: '85', name: 'U. dan Fodio', title: 'Reform & AI Justice', lang: 'Hausa', file: '85_dan_fodio_ha.md', code: 'ha', extra: [
+      { lang: 'English', file: '85_dan_fodio_en.md', code: 'en' },
+    ]},
+    { id: '86', name: 'N. Azikiwe', title: 'African Data Union', lang: 'Igbo', file: '86_azikiwe_ig.md', code: 'ig', extra: [
+      { lang: 'English', file: '86_azikiwe_en.md', code: 'en' },
+    ]},
+    { id: '87', name: 'O. Awolowo', title: 'Algorithmic Justice', lang: 'Yorùbá', file: '87_awolowo_yo.md', code: 'yo', extra: [
+      { lang: 'English', file: '87_awolowo_en.md', code: 'en' },
+    ]},
+    { id: '88', name: 'Shaka Zulu', title: 'Unification & AI', lang: 'isiZulu', file: '88_shaka_zu.md', code: 'zu' },
+    { id: '89', name: 'S. M. A. Hassan', title: 'Algorithm Liberation', lang: 'Soomaali', file: '89_so.md', code: 'so' },
+    { id: '90', name: 'Haile Selassie', title: 'Pan-African AI', lang: 'አማርኛ', file: '90_haile_selassie_am.md', code: 'am' },
+    { id: '91', name: 'J. Nyerere', title: 'Ujamaa Data', lang: 'Kiswahili', file: '91_nyerere_sw.md', code: 'sw' },
+    { id: '92', name: 'Jan Smuts', title: 'Holism & Algorithm', lang: 'Afrikaans', file: '92_af.md', code: 'af' },
+  ]},
+  { region: '南亚 · South Asia', docs: [
+    { id: '51', name: 'Gandhi', title: 'Non-violence & AI', lang: 'Gujarati', file: '51_gandhi_gu.md', code: 'gu' },
     { id: '51', name: 'Gandhi', title: 'Non-violence & AI', lang: 'हिन्दी', file: '51_gandhi_hi.md', code: 'hi' },
-    { id: '52', name: 'Lee Kuan Yew', title: 'Meritocracy & Smart Nation', lang: 'English', file: '52_lik_kuan_yew_en.md', code: 'en' },
     { id: '53', name: 'Ashoka', title: 'Dharma & Algorithm', lang: 'हिन्दी', file: '53_ashoka_hi.md', code: 'hi' },
+    { id: '93', name: 'R. Tagore', title: 'Humanity & AI', lang: 'বাংলা', file: '93_tagore_bn.md', code: 'bn' },
+    { id: '94', name: 'Shivaji', title: 'Maratha AI Autonomy', lang: 'मराठी', file: '94_shivaji_mr.md', code: 'mr' },
+    { id: '95', name: 'Thiruvalluvar', title: 'Ethical Algorithm', lang: 'தமிழ்', file: '95_ta.md', code: 'ta' },
+    { id: '96', name: 'P.V.N. Rao', title: 'Tech Reform Path', lang: 'తెలుగు', file: '96_te.md', code: 'te' },
+    { id: '97', name: 'S.N. Guru', title: 'Algorithmic Equality', lang: 'മലയാളം', file: '97_ml.md', code: 'ml' },
+    { id: '98', name: 'B.R. Ambedkar', title: 'Constitutional AI', lang: 'ಕನ್ನಡ', file: '98_kn.md', code: 'kn' },
+    { id: '99', name: 'Ranjit Singh', title: 'Sikh Digital Empire', lang: 'ਪੰਜਾਬੀ', file: '99_ranjit_pa.md', code: 'pa' },
+    { id: '100', name: 'S.W.R.D. Bandaranaike', title: 'Small State AI & Buddhist Ethics', lang: 'සිංහල', file: '100_si.md', code: 'si', extra: [
+      { lang: 'English', file: '100_bandaranaike_en.md', code: 'en' },
+    ]},
+  ]},
+  { region: '东亚 · East Asia', docs: [
+    { id: '52', name: 'Lee Kuan Yew', title: 'Meritocracy & Smart Nation', lang: 'English', file: '52_lik_kuan_yew_en.md', code: 'en' },
     { id: '54', name: 'Tokugawa Ieyasu', title: 'Stability & Algorithm', lang: '日本語', file: '54_tokugawa_ja.md', code: 'ja' },
     { id: '55', name: 'Mandela', title: 'Reconciliation & AI', lang: 'English', file: '55_mandela_en.md', code: 'en' },
     { id: '56', name: 'Hồ Chí Minh', title: 'Digital Independence', lang: 'Tiếng Việt', file: '56_hochiminh_vi.md', code: 'vi' },
     { id: '62', name: 'Sejong the Great', title: 'Communication & AI', lang: '한국어', file: '62_sejong_ko.md', code: 'ko' },
+  ]},
+  { region: '东南亚 · Southeast Asia', docs: [
+    { id: '101', name: 'Sukarno', title: 'Digital Decolonization', lang: 'Bahasa Indonesia', file: '101_sukarno_id.md', code: 'id' },
+    { id: '102', name: 'Tunku A.R.', title: 'Multiracial AI', lang: 'Bahasa Melayu', file: '102_tunku_ms.md', code: 'ms' },
+    { id: '103', name: 'Chulalongkorn', title: 'Siamese AI Modernity', lang: 'ไทย', file: '103_chulalongkorn_th.md', code: 'th' },
+    { id: '104', name: 'Jayavarman VII', title: 'Buddhist Algorithm', lang: 'ភាសាខ្មែរ', file: '104_jayavarman_km.md', code: 'km' },
+    { id: '105', name: 'Aung San', title: 'Federal AI', lang: 'မြန်မာဘာသာ', file: '105_aung_san_my.md', code: 'my' },
+    { id: '106', name: 'B.P. Koirala', title: 'Socialist AI', lang: 'नेपाली', file: '106_ne.md', code: 'ne' },
   ]},
   { region: '中东 · Middle East', docs: [
     { id: '57', name: 'Ibn Khaldun', title: 'Civilization Cycles', lang: 'العربية', file: '57_ibn_khaldun_ar.md', code: 'ar' },
     { id: '58', name: 'Kemal Atatürk', title: 'Secular AI Modernity', lang: 'Türkçe', file: '58_kemal_tr.md', code: 'tr' },
     { id: '60', name: 'Genghis Khan', title: 'Global Algorithmic Order', lang: 'English', file: '60_genghis_en.md', code: 'en' },
     { id: '61', name: 'Cyrus the Great', title: 'Data Liberation', lang: 'فارسی', file: '61_cyrus_fa.md', code: 'fa' },
+    { id: '63', name: 'Saladin', title: 'Justice & Algorithm', lang: 'العربية', file: '63_saladin_ar.md', code: 'ar', extra: [
+      { lang: 'English', file: '63_saladin_en.md', code: 'en' },
+    ]},
+    { id: '65', name: 'Suleiman', title: 'Kanun & Algorithm', lang: 'Türkçe', file: '65_suleiman_tr.md', code: 'tr', extra: [
+      { lang: 'English', file: '65_suleiman_en.md', code: 'en' },
+    ]},
+    { id: '107', name: 'M. Iqbal', title: 'Spiritual AI Awakening', lang: 'اردو', file: '107_iqbal_ur.md', code: 'ur' },
+    { id: '108', name: 'Saladin', title: 'Kurdish Justice', lang: 'Kurmancî', file: '108_saladin_ku.md', code: 'ku' },
+    { id: '109', name: 'T. Herzl', title: 'Algorithmic State', lang: 'עברית', file: '109_herzl_he.md', code: 'he' },
+  ]},
+  { region: '跨文化对话 · Cross-Cultural', docs: [
+    { id: '110', name: '中華先賢', title: 'Six Sages in Tradition Chinese', lang: '繁體中文', file: '110_zh_Hant.md', code: 'zh_Hant' },
+    { id: '111', name: '圓桌會議', title: 'Cross-Cultural AI Governance Dialogue', lang: '中文', file: '111_cross_cultural_dialogue.md', code: 'zh' },
   ]},
 ];
 
@@ -718,11 +809,22 @@ function renderHeroes() {
       card.href = doc.file;
       card.target = '_blank';
       card.className = 'lang-card';
+
+      let extraLinks = '';
+      if (doc.extra) {
+        extraLinks = '<div style="margin-top:6px;display:flex;gap:4px;flex-wrap:wrap;justify-content:center;">' +
+          doc.extra.map(e =>
+            `<a href="${e.file}" target="_blank" style="padding:1px 8px;background:#f0ebe3;border-radius:8px;font-size:0.7rem;text-decoration:none;color:var(--text-light);border:1px solid #e0d5c7;display:inline-flex;align-items:center;gap:2px;" onmouseover="this.style.borderColor='var(--red)';this.style.background='#fff5f0';" onmouseout="this.style.borderColor='#e0d5c7';this.style.background='#f0ebe3';">+ ${e.lang}</a>`
+          ).join('') +
+          '</div>';
+      }
+
       card.innerHTML = `
         <div class="native">${doc.name}</div>
         <div class="name">${doc.title}</div>
         <span class="code">${doc.lang} (${doc.code})</span>
         <div class="status ready">🌐 Translated</div>
+        ${extraLinks}
       `;
       grid.appendChild(card);
     });
